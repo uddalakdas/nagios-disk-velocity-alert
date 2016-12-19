@@ -1,0 +1,15 @@
+nagios-server:
+  build: '.'
+  ports:
+    - "2222:22"
+    - "80:80"
+  environment:
+    - WINDOWS_HOST=10.195.5.15
+    - SMTP_SERVER=uslexsmtp04.lex.lexmark.com
+    - SMTP_PORT=25
+    - ADMIN_EMAIL=uddalak91das@gmail.com
+    - NAGIOS_SERVER_EMAIL=nagios_server@example.com
+    - WARNING_VELOCITY=50 # in Mb/s
+    - ERROR_VELOCITY=70   # in Mb/s
+    - WARNING_PERCENTAGE=39
+    - ERROR_PERCENTAGE=20  
