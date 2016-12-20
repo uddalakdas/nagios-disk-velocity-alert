@@ -39,12 +39,13 @@ do
 done
 avg=`echo "$sum/30" | bc`
 echo "VELOCITY = $avg Mb/s"
-if [[ $avg -ge $6 ]]; then
-	echo "WARNING: Drive velocity warning";
-	exit 1;
-elif [[ $avg -ge $8 ]]; then
+
+if [[ $avg -ge $8 ]]; then
 	echo "CRITICAL: Drive velocity critical";
 	exit 2;
+elif [[ $avg -ge $6 ]]; then
+	echo "WARNING: Drive velocity warning";
+	exit 1;
 else
 	echo "OK: Drive velocity normal"
 	exit 0

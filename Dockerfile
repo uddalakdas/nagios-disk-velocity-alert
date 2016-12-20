@@ -10,9 +10,7 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
-RUN echo "export LC_ALL=en_US.UTF-8" >> /etc/environment
 
-RUN echo "service ssh start" | cat - /etc/environment > /tmp/out && mv /tmp/out /etc/environment
 EXPOSE 22
 
 
